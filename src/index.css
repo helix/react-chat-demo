@@ -1,0 +1,112 @@
+:root {
+    --header-bg-color: #f9f9f9;
+    --pane-border-color: #e8e8e8;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+.chatContainer {
+    display: grid;
+    grid-template-columns: 4fr minmax(200px, 1fr);
+    grid-template-rows: 1fr 70px;
+    grid-template-areas: "messageList     userList"
+                         "messageInputBox userList";
+    height: 100vh;
+    width: 100vw;
+}
+
+.userList {
+    border-left: solid 1px var(--pane-border-color);
+    grid-area: userList;
+}
+.userList__header h2 {
+    background-color: var(--header-bg-color);
+    border-bottom: solid 1px var(--pane-border-color);
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0.5em 0.8em;
+}
+.userList ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 0;
+}
+.userList li {
+    padding: 0.2em 0.4em;
+    height: 30px;
+    display: flex;
+}
+.userList li span {
+    margin-left: 0.5em;
+    line-height: 30px;
+}
+
+
+.messageInputBox {
+    padding: 20px;
+}
+
+.messageInputBox__inputContainer {
+    border: solid 2px #666;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.messageInputBox__input {
+    border: none;
+    font-size: 16px;
+    font-weight: 100;
+    width: 100%;
+    outline: none;
+    padding: 0;
+}
+.messageInputBox__input::placeholder {
+    color: #CCC;
+}
+
+
+
+.messageList {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.message {
+    background: white;
+    color: #2c2d30;
+    padding: 0.5em 0;
+    display: flex;
+    align-items: flex-start;
+}
+.message:hover {
+    background-color: var(--header-bg-color);
+}
+.message__gutter {
+    flex: 0 0 70px;
+    padding-right: 0.5em;
+    text-align: right;
+}
+.message__content {
+    flex: auto;
+    margin-right: 20px;
+}
+
+.message__header {
+}
+.message__author {
+    font-weight: bold;
+}
+.message__timestamp {
+    color: #717274;
+    margin-left: 0.5em;
+    font-size: 12px;
+}
+
+.message__body {
+}
